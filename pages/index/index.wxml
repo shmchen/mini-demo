@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 顶部轮播图 -->
+  <swiper indicator-dots="true" autoplay="true" class="banners" interval="2000">
+    <block wx:for="{{banner}}" wx:key='{{index}}'>
+      <swiper-item class="banner">
+        <image src="{{item}}" bindtap="bindViewTap" class="banner-image" width="100%" height="100%" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  
+  <!-- 内容列表 -->
+  <view class="news-item-container">
+    <view wx:for="{{list}}" wx:key='{{index}}'
+    class="news-item" catchtap='cellClick' data-title='{{item.title}}'>
+        <view class="news-item-left">
+          <text class="news-item-title">{{item.title}}</text>
+        </view>
+        <view class="news-item-right">
+          <image src="{{item.image}}" class="news-image" />
+        </view>
+    </view>
+  </view>
+
+</view>
