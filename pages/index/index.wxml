@@ -3,7 +3,7 @@
 
   <!-- 顶部轮播图 -->
   <swiper indicator-dots="true" autoplay="true" class="banners" interval="2000">
-    <block wx:for="{{banner}}" wx:key='{{index}}'>
+    <block wx:for="{{banners}}" wx:key='{{index}}'>
       <swiper-item class="banner">
         <image src="{{item}}" bindtap="bindViewTap" class="banner-image" width="100%" height="100%" mode="aspectFill" />
       </swiper-item>
