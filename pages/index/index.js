@@ -10,16 +10,16 @@
  * 注意：本内容仅限于北京法意科技有限公司内部传阅，禁止外泄以及用于其他的商业目
  */
 
-const network = require('../../utils/network.js')
+const util = require('../../utils/util.js')
 
 Page({
   data: {
     // 轮播图图片数据
     banners: [ 
-      // "https://pic3.zhimg.com/v2-ccee8cac79c40ee36509368efed6126a.jpg",
-      // "https://pic2.zhimg.com/v2-0089f1dd57a76b00ed261e51d6153eb9.jpg",
-      // "https://pic1.zhimg.com/v2-63c4c51bd6aba2e28a0428d31d005938.jpg",
-      // "https://pic2.zhimg.com/v2-ce23051ffc715a8e83f9883dfb192019.jpg"
+      "/images/banner/banner1.jpg",
+      "/images/banner/banner2.jpg",
+      "/images/banner/banner3.jpg",
+      "/images/banner/banner4.jpg"
     ],
     // 列表数据
     list: [ 
@@ -78,31 +78,8 @@ Page({
    * 页面首次加载
    */
   onLoad() {
-
-    this._getBanners();
-  },
-
-  /**
-   * 获取轮播图片
-   */
-  _getBanners() {
-
-    // 发起网络请求
-    network.getBanners(
-      {
-        success: res => {
-          let banners = res.list;
-          console.log(res);
-
-          this.setData({
-            banners: banners
-          });
-        },
-        fail: res => {
-          console.log(res);
-        }
-      }
-    );
+    let dateString = util.formatTime(new Date());
+    console.log(dateString);
   },
 
   /**
